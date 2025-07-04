@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "title": "Movies App",
+        "description": "A simple React app to display movies.",
+        "image": "../src/assets/movieimage.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Movies App",
+        "description": "A simple React app to display movies.",
+        "image": "../src/assets/movieimage.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Movies App",
+        "description": "A simple React app to display movies.",
+        "image": "../src/assets/movieimage.jpg"
+    }
+]
