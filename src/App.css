@@ -11,9 +11,17 @@ main {
 
 div.header {
   padding: 0.5em;
-  background-color: #26dabc;
-  width: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+div.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(5, 206, 206);
 }
 
 div.movie-card-container {
@@ -25,8 +33,6 @@ div.movie-card-container {
   padding: 3em;
 }
 
-
-
 div.movie-card {
   display: flex;
   flex-direction: column;
@@ -37,7 +43,6 @@ div.movie-card {
   background-color: #f0f0f0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 20%;
 
 }
 
