@@ -6,23 +6,24 @@ import TVShowsPage from './pages/TVShowsPage'
 import DetailsPage from './pages/DetailsPage'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+
 function App() {
-
-
   return (
     <BrowserRouter>
-      <main>
+      <div className="app-wrapper">
         <Header />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<MoviesPage />} />
-          <Route path="/tvshows" element={<TVShowsPage />} />
-          <Route path="/details/:id" element={<DetailsPage />} />
-        </Routes>
+
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<MoviesPage />} />
+            <Route path="/tvshows" element={<TVShowsPage />} />
+            <Route path="/details/:id" element={<DetailsPage />} />
+          </Routes>
+        </main>
+
         <Footer />
-
-      </main>
-
+        <ScrollToTop />
+      </div>
     </BrowserRouter>
   )
 }

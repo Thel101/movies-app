@@ -5,6 +5,7 @@ body {
   height: auto;
   min-height: 100vh;
   overflow-x: hidden;
+  overscroll-behavior: none !important;
 }
 
 :root {

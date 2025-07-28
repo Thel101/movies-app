@@ -39,10 +39,19 @@ export default function MoviesPage() {
     }
 
     return (
-        <div>
+        <div className="movies-page">
             <h1>Movies</h1>
             {loading && <div>Loading movies...</div>}
-            {error && <div>Error: {error}</div>}
+            {error && (
+                <div className="error-container">
+                    <div className="error-icon">⚠️</div>
+                    <h2>Unable to Load Movies</h2>
+                    <p>Error: {error}</p>
+                    <button onClick={() => window.location.reload()}>
+                        🔄 Try Again
+                    </button>
+                </div>
+            )}
             <div className='content-card-container'>
                 {!loading && !error && movies.map((movie) => (
                     <ContentCard
@@ -52,7 +61,6 @@ export default function MoviesPage() {
                     />
                 ))}
             </div>
-
         </div>
     )
 }

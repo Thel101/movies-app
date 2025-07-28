@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 
 export default function ScrollToTop() {
     const [isVisible, setIsVisible] = useState(false)
-    const [scrollPosition, setScrollPosition] = useState(0)
 
     console.log('ScrollToTop component rendered')
 
@@ -10,14 +9,9 @@ export default function ScrollToTop() {
         console.log('useEffect called')
 
         const toggleVisibility = () => {
-            // Try multiple ways to get scroll position
-            const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
-            const scrollX = window.scrollX || window.pageXOffset || document.documentElement.scrollLeft
 
-            console.log('Scroll detected! Y:', scrollY, 'X:', scrollX)
-            setScrollPosition(scrollY)
 
-            if (scrollY > 300) {
+            if (window.scrollY > 400) {
                 console.log('Should show button')
                 setIsVisible(true)
             } else {
@@ -31,8 +25,6 @@ export default function ScrollToTop() {
 
         return () => {
             window.removeEventListener('scroll', toggleVisibility)
-            document.removeEventListener('scroll', toggleVisibility)
-            document.body.removeEventListener('scroll', toggleVisibility)
         }
     }, [])
 
@@ -46,28 +38,15 @@ export default function ScrollToTop() {
 
     return (
         <div>
-            {/* Debug info - always visible */}
-            <div style={{
-                position: 'fixed',
-                top: '10px',
-                left: '10px',
-                background: 'yellow',
-                padding: '10px',
-                zIndex: 9999,
-                fontSize: '12px'
-            }}>
-                Scroll: {scrollPosition}px<br />
-                Visible: {isVisible.toString()}
-            </div>
 
-            {/* Always visible button for testing */}
-            <button
+
+            {isVisible && <button
                 onClick={scrollToTop}
                 style={{
                     position: 'fixed',
                     bottom: '30px',
                     right: '30px',
-                    backgroundColor: isVisible ? 'rgb(5, 206, 206)' : 'red',
+                    backgroundColor: 'rgb(5, 206, 206)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '50%',
@@ -82,6 +61,7 @@ export default function ScrollToTop() {
             >
                 ↑
             </button>
+            }
         </div>
     )
 }
