@@ -14,6 +14,7 @@ div.header {
   text-align: left;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 div.header-container {
@@ -24,7 +25,44 @@ div.header-container {
   background-color: rgb(5, 206, 206);
 }
 
-div.movie-card-container {
+nav.navigation {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+}
+
+.nav-link {
+  color: white;
+
+  font-size: 1.1em;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+div.content-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
@@ -33,7 +71,7 @@ div.movie-card-container {
   padding: 3em;
 }
 
-div.movie-card {
+div.content-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,10 +84,29 @@ div.movie-card {
 
 }
 
-img.movieImg {
+img.contentImg {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+div.details-info {
+  max-width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #4d4b4b;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
